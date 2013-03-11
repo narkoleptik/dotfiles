@@ -12,7 +12,7 @@ export EDITOR=`which vim`;
 export LESS='FiX'
 
 # Set our path to include bin in our homedir
-export PATH=/usr/local/bin:$PATH:/usr/local/sbin:$HOME/bin
+export PATH=/usr/local/bin:$PATH:/usr/local/sbin:$HOME/bin:$HOME/local/bin
 
 # Identify what type of system we're using.  If this is a Mac,
 # it will setup some aliases one way, on linux, another.
