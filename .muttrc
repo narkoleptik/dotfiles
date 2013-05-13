@@ -1,0 +1,76 @@
+set editor = vim
+
+set mail_check = 60
+set timeout = 15
+
+set header_cache = "~/.mutt/cache/headers"
+set message_cachedir = "~/.mutt/cache/bodies"
+set certificate_file = "~/.mutt/certificates"
+set tmpdir = "~/.mutt/temp"
+
+set beep_new
+set	delete=yes
+set	sort=threads
+set sort_aux = last-date-received
+set	strict_threads
+set index_format="%4C %Z %[!%Y-%m-%d %H:%M] %-17.17F %s"
+set	pager_format="%S [%C/%T] %n (%l) %s"
+set	status_format="%v: %f (%s) [%M/%m] [N=%n,*=%t,new=%b]"
+set mailcap_path="~/.mutt/mailcap"
+set mailcap_sanitize=yes
+
+##color
+color normal brightgreen default 
+color quoted red default
+color quoted1 yellow default
+color quoted2 green default
+color quoted3 cyan default
+color quoted4 blue default
+color quoted5 magenta default
+color quoted6 red default
+color quoted7 yellow default
+color signature brightred default
+color indicator white blue
+color error brightred black
+color status yellow blue
+color tree brightred default    # the thread tree in the index menu
+color tilde brightmagenta default
+color message brightcyan default
+color markers brightcyan default
+color attachment brightmagenta default
+color search brightblue default    # how to hilite search patterns in the pager
+#
+color header brightred black ^(From|Subject):
+color body brightmagenta default "(ftp|http)://[^ ]+"   # point out URLs
+color body brightmagenta default [-a-z_0-9.]+@[-a-z_0-9.]+      # e-mail addresses
+color underline brightgreen default
+color index white default ~D
+color index brightred default ~N
+color index brightred default ~O
+#folder-hook junk push 'D.\n'
+#
+##source .mutt-gpg.rc
+#
+## spamassassin report and classify as spam
+##macro index S "|/usr/bin/spamassassin -r"
+## spamassassin classify as ham
+## rebuild the spamassassin bayes filter db
+#
+set markers=no
+
+bind editor <space> noop
+macro index gi "<change-folder>=INBOX<enter>" "Go to inbox"
+#macro index gl "<change-folder>=
+macro index S ":source ~/.muttrc\n" "Reload muttrc"
+macro pager S ":source ~/.muttrc\n" "Reload muttrc"
+
+macro index <f2> '<sync-mailbox><enter-command>source ~/.mutt/account.narkoleptik<enter><change-folder>!<enter>'
+macro index <f3> '<sync-mailbox><enter-command>source ~/.mutt/account.gmail<enter><change-folder>!<enter>'
+macro index <f4> '<sync-mailbox><enter-command>source ~/.mutt/account.yahoo<enter><change-folder>!<enter>'
+
+folder-hook 'default.net' 'source ~/.mutt/account.default'
+folder-hook 'gmail.com' 'source ~/.mutt/account.gmail'
+folder-hook 'yahoo.com' 'source ~/.mutt/account.yahoo'
+# switch to default account on startup
+source ~/.mutt/account.default
+

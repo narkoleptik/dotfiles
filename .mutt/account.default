@@ -1,0 +1,11 @@
+set my_email_pass = "sekret"
+set from = "me@example.com"
+set realname = "A.R. Madillo"
+set imap_user = "me@example.com"
+set imap_pass = $my_email_pass
+set folder = "imaps://mail.example.com:993"
+set spoolfile = "+INBOX"
+set postponed = "+INBOX/Drafts"
+set smtp_url = "smtp://me@example.com@mail.example.com:587"
+set smtp_pass = $my_email_pass
+

@@ -1,0 +1,16 @@
+set my_email_pass = "iYahooDoYou?"
+set from = "somebody@yahoo.com"
+set realname = "Holly Golightly"
+set imap_user = "somebody@yahoo.com"
+set imap_pass = $my_email_pass
+set folder = "imaps://imap.mail.yahoo.com:993"
+set spoolfile = "+INBOX"
+set postponed = "Draft"
+set smtp_url = "smtps://somebody@smtp.mail.yahoo.com:465"                                                               
+set smtp_pass = $my_email_pass
+
+#macro index ga "<change-folder>=[Gmail]/All Mail<enter>" "Go to all mail"                                                   
+macro index gs "<change-folder>=Sent<enter>" "Go to Sent Mail"
+macro index gd "<change-folder>=Draft<enter>" "Go to drafts"
+macro index gc "<change-folder>=Y! Conversations<enter>" "Go to conversations"
+
