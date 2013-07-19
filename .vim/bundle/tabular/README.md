@@ -5,4 +5,4 @@ Also, I added this file:
 
 :AddTabularPattern block /=>
 
-This gets activated when I use ,T (<leader>T) in my .vimrc
+This gets activated when I use ,T (&lt;leader&gt;T) in my .vimrc
