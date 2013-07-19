@@ -108,6 +108,7 @@ nnoremap <leader>C :let &scrolloff=999-&scrolloff<cr>
 nnoremap <leader>n :setlocal number!<cr>
 nnoremap <leader>l :setlocal relativenumber!<cr>
 nnoremap <leader>g :GitBlame<cr>
+nnoremap <leader>T :Tabular block<cr>
 map <M-Esc>[62~ <ScrollWheelUp>                                       
 map! <M-Esc>[62~ <ScrollWheelUp>                                      
 map <M-Esc>[63~ <ScrollWheelDown>                                     
