@@ -144,5 +144,16 @@ hi cursorline ctermbg=236 cterm=none
 
 hi StatusLine     term=bold,reverse cterm=bold,reverse ctermfg=130 ctermbg=15 gui=bold,reverse guifg=#262626 guibg=fg
 
+if has("autocmd")
+  " When editing a file, always jump to the last known cursor position. 
+  " Don't do it when the position is invalid or when inside an event handler 
+  " (happens when dropping a file on gvim). 
+  autocmd BufReadPost *
+    \ if line("'\"") > 0 && line("'\"") <= line("$") |
+    \   exe "normal g`\"" |
+    \ endif
+
+endif " has("autocmd")
+
 
 
