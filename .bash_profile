@@ -126,5 +126,4 @@ alias fix_chrome='defaults write com.google.Chrome DisablePrintPreview -boolean 
 if [ -f .bash_login ]
 then
     source ~/.bash_login
-    export JAVA_HOME=$(/usr/libexec/java_home)
 fi
