@@ -86,6 +86,8 @@ nnoremap <leader>ft Vatzf
 nnoremap <leader>S ?{<CR>jV/^\s*\}?$<CR>k:sort<CR>:noh<CR>
 " format paragraphs
 nnoremap <leader>q gqip
+" Underline line
+nnoremap <leader>Q yypVr-
 " reselect the just pasted text
 nnoremap <leader>v V`]
 " quickly open vimrc in a window
@@ -134,6 +136,19 @@ au BufRead,BufNewFile *.pp
 
 abbreviate teh the
 abbreviate adn and
+
+augroup markdown
+    au!
+    au BufNewFile,BufRead *.md,*.markdown setlocal filetype=ghmarkdown
+augroup END
+
+augroup yml
+    au!
+    au BufNewFile,BufRead *.yml,*.yaml setlocal filetype=yaml shiftwidth=2 softtabstop=2 tabstop=2
+augroup END
+    
+    
+
 
 " sets my cursorline to be a gray background
 set cursorline
