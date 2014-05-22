@@ -96,7 +96,7 @@ fi
 # √ $
 # {user@breezy.local}{Sun Mar 10 09:11:45}{~}
 # ∙✘∙ $
-PROMPT_COMMAND='PS1="\[\e[0;36m\]{\[\e[0;31m\]\u\[\e[0;35m\]@\[\e[${GREP_COLOR}m\]\H\[\e[0;36m\]}{\[\e[0;35m\]\d \t\[\e[0;36m\]}{\[\e[0;35m\\]\w\[\e[0;36m\]}\n\`if [[ \$? = "0" ]]; then echo "\\[\\033[34m\\]√\\[\\033[0m\\]"; else echo -e "\\[\\033[31m\\]∙✘∙"; fi\` \\$\[\e[0m\] " '
+PROMPT_COMMAND='PS1="\[\e[0;36m\]{\[\e[0;31m\]\u\[\e[0;35m\]@\[\e[${GREP_COLOR}m\]\H\[\e[0;36m\]}{\[\e[0;35m\]\d \t\[\e[0;36m\]}{\[\e[0;35m\\]\w\[\e[0;36m\]}\n\`if [[ \$? = "0" ]]; then echo "\\[\\033[34m\\]✔\\[\\033[0m\\]"; else echo -e "\\[\\033[31m\\]∙✘∙"; fi\` \\$\[\e[0m\] " '
 
 # Finally, just append commands to my history
 PROMPT_COMMAND="$PROMPT_COMMAND ; history -a"
