@@ -33,9 +33,9 @@ set t_ti= t_te= t_vb=
 set tabstop=4
 
 " sets my colorscheme
-set background=dark
 colorscheme elflord
 set pastetoggle=<F2>
+set background=dark
 
 " coming home to vim recommendations
 "set nocompatible

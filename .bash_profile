@@ -77,6 +77,7 @@ alias gs='git status'
 if [ "$SYSIDENT" == "Darwin" ]
 then
     alias flush="sudo dscacheutil -flushcache"
+    alias flushMavericks="sudo killall -HUP mDNSResponder"
     alias ls='ls -G'
     # I recompiled gnudate and put it in my bin dir on my mac.
     if [ -e ~/bin/date ]
@@ -122,6 +123,7 @@ fi
 
 # One final annoyance for chrome on the Mac
 alias fix_chrome='defaults write com.google.Chrome DisablePrintPreview -boolean true'
+alias fix_route='sudo route add -net 10.0.0.0/8 10.0.6.5'
 
 if [ -f .bash_login ]
 then
