@@ -133,6 +133,8 @@ augroup END
 au BufRead,BufNewFile *.pp
   \ set filetype=ruby
 
+au BufRead,BufNewFile *.ino
+  \ set filetype=cpp
 
 abbreviate teh the
 abbreviate adn and
