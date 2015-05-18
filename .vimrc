@@ -74,7 +74,7 @@ vnoremap <tab> %
 set wrap
 set textwidth=72
 set formatoptions=qrn1
-set colorcolumn=+1
+"set colorcolumn=+1
 
 " cleans up all trailing whitespace
 nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
@@ -160,6 +160,8 @@ hi cursorline ctermbg=236 cterm=none
 "236 is a nice gray
 
 hi StatusLine     term=bold,reverse cterm=bold,reverse ctermfg=130 ctermbg=15 gui=bold,reverse guifg=#262626 guibg=fg
+
+hi MatchParen cterm=reverse ctermfg=lightblue
 
 if has("autocmd")
   " When editing a file, always jump to the last known cursor position. 
