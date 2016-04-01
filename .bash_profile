@@ -97,7 +97,12 @@ fi
 # √ $
 # {user@breezy.local}{Sun Mar 10 09:11:45}{~}
 # ∙✘∙ $
-PROMPT_COMMAND='PS1="\[\e[0;36m\]{\[\e[0;31m\]\u\[\e[0;35m\]@\[\e[${GREP_COLOR}m\]\H\[\e[0;36m\]}{\[\e[0;35m\]\d \t\[\e[0;36m\]}{\[\e[0;35m\\]\w\[\e[0;36m\]}\n\`if [[ \$? = "0" ]]; then echo "\\[\\033[34m\\]✔\\[\\033[0m\\]"; else echo -e "\\[\\033[31m\\]∙✘∙"; fi\` \\$\[\e[0m\] " '
+if [ -f $HOME/.git_prompt ]
+then
+    source $HOME/.git_prompt
+fi
+
+PROMPT_COMMAND='PS1="\[\e[0;36m\]{\[\e[0;31m\]\u\[\e[0;35m\]@\[\e[${GREP_COLOR}m\]\h\[\e[0;36m\]}{\[\e[0;35m\]\d \t\[\e[0;36m\]}{\[\e[0;35m\\]\w\[\e[0;36m\]}\n\`if [[ \$? = "0" ]]; then echo "\\[\\033[34m\\]✔\\[\\033[0m\\]"; else echo -e "\\[\\033[31m\\]∙✘∙"; fi\` $(__git_ps1) \\$\[\e[0m\] " '
 
 # Finally, just append commands to my history
 PROMPT_COMMAND="$PROMPT_COMMAND ; history -a"
@@ -124,8 +129,13 @@ fi
 # One final annoyance for chrome on the Mac
 alias fix_chrome='defaults write com.google.Chrome DisablePrintPreview -boolean true'
 alias fix_route='sudo route add -net 10.0.0.0/8 10.0.6.5'
+alias new_main='echo "int main(int argc, char* argv[]) {\n}" > main.c'
 
 if [ -f .bash_login ]
 then
     source ~/.bash_login
+fi
+
+if [ -f $(brew --prefix)/etc/bash_completion ]; then
+  . $(brew --prefix)/etc/bash_completion
 fi
