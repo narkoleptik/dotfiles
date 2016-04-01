@@ -30,7 +30,7 @@ silent! call pathogen#runtime_append_all_bundles()
 set cpo=aABceFs$
 
 set t_ti= t_te= t_vb=
-set tabstop=4
+set tabstop=2
 
 " sets my colorscheme
 colorscheme elflord
@@ -40,8 +40,8 @@ set background=dark
 " coming home to vim recommendations
 "set nocompatible
 set modelines=0
-set shiftwidth=4
-set softtabstop=4
+set shiftwidth=2
+set softtabstop=2
 set expandtab
 set encoding=utf-8
 set scrolloff=3
