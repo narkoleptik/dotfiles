@@ -12,7 +12,7 @@ export EDITOR=`which vim`;
 export LESS='FiX'
 
 # Set our path to include bin in our homedir
-export PATH=$HOME/bin:/usr/local/bin:$PATH:/usr/local/sbin
+export PATH=$HOME/bin:/usr/local/bin:$PATH:/usr/local/sbin:$HOME/go/bin
 
 # Identify what type of system we're using.  If this is a Mac,
 # it will setup some aliases one way, on linux, another.
@@ -58,6 +58,7 @@ alias S="source ~/.bash_profile"
 # grep with colors!
 alias grep="grep --color"
 alias egrep="egrep --color"
+alias ac="aws-cli"
 
 # These give me feedback for the cp, mv, and rm commands
 alias mv='mv -v'
@@ -131,6 +132,11 @@ alias fix_chrome='defaults write com.google.Chrome DisablePrintPreview -boolean 
 alias fix_route='sudo route add -net 10.0.0.0/8 10.0.6.5'
 alias new_main='echo "int main(int argc, char* argv[]) {\n}" > main.c'
 
+if [ -f .bashrc ]
+then
+    source ~/.bashrc
+fi
+
 if [ -f .bash_login ]
 then
     source ~/.bash_login
@@ -139,3 +145,4 @@ fi
 if [ -f $(brew --prefix)/etc/bash_completion ]; then
   . $(brew --prefix)/etc/bash_completion
 fi
+[[ -s "$HOME/.avn/bin/avn.sh" ]] && source "$HOME/.avn/bin/avn.sh" # load avn
