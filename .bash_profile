@@ -12,7 +12,7 @@ export EDITOR=`which vim`;
 export LESS='FiX'
 
 # Set our path to include bin in our homedir
-export PATH=$HOME/bin:/usr/local/bin:$PATH:/usr/local/sbin
+export PATH=$HOME/bin:/usr/local/bin:$PATH:/usr/local/sbin:$HOME/go/bin
 
 # Identify what type of system we're using.  If this is a Mac,
 # it will setup some aliases one way, on linux, another.
@@ -134,6 +134,11 @@ alias new_main='echo "int main(int argc, char* argv[]) {\n}" > main.c'
 if [ -f .bash_login ]
 then
     source ~/.bash_login
+fi
+
+if [ -f .bashrc ]
+then
+    source ~/.bashrc
 fi
 
 if [ -f $(brew --prefix)/etc/bash_completion ]; then
