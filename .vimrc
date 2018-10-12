@@ -37,6 +37,9 @@ colorscheme elflord
 set pastetoggle=<F2>
 set background=dark
 
+set swapfile
+set dir=~/.vim/swp
+
 " coming home to vim recommendations
 "set nocompatible
 set modelines=0
@@ -136,6 +139,9 @@ au BufRead,BufNewFile *.pp
 au BufRead,BufNewFile *.ino
   \ set filetype=cpp
 
+au BufRead,BufNewFile *.go
+  \ setlocal number
+
 abbreviate teh the
 abbreviate adn and
 
@@ -175,4 +181,4 @@ if has("autocmd")
 endif " has("autocmd")
 
 
-
+let g:go_fmt_command = "goimports"
