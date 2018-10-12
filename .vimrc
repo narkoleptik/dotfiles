@@ -156,7 +156,9 @@ augroup yml
 augroup END
     
     
-
+" Set swp files to specific dir
+set swapfile
+set dir=~/.vim/swp
 
 " sets my cursorline to be a gray background
 set cursorline
